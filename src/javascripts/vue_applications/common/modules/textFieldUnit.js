@@ -1,24 +1,24 @@
-import textField from '@/javascripts/vue_applications/common/modules/textField'
+import textField from '@/javascripts/vue_applications/common/modules/textField';
 
 const state = () => {
   return {
     count: 0,
-  }
-}
+  };
+};
 
 const getters = {
 
-}
+};
 
 const actions = {
 
-}
+};
 
 const mutations = {
-  setState(state, payload) {
+  setState (state, payload) {
     state[payload.key] = payload.value;
   },
-}
+};
 
 export default {
   // strictとnamespacedをそれぞれtrueにしておきます。
@@ -31,4 +31,4 @@ export default {
   modules: {
     textField,
   },
-}
+};

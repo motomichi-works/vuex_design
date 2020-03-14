@@ -1,7 +1,9 @@
 <template>
   <section>
     <h1>TextFieldUnit</h1>
-    <button @click="increment">count: {{ count }}</button>
+    <button @click="increment">
+      count: {{ count }}
+    </button>
     <TextField />
   </section>
 </template>
@@ -22,14 +24,14 @@ export default {
   },
   methods: {
     ...mapMutations('textFieldUnit', [
-      'setState'
+      'setState',
     ]),
-    increment() {
+    increment () {
       this.setState({
         key: 'count',
         value: this.count + 1,
       });
     },
-  }
-}
+  },
+};
 </script>

@@ -1,25 +1,25 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-import textFieldUnit from '@/javascripts/vue_applications/common/modules/textFieldUnit'
+import textFieldUnit from '@/javascripts/vue_applications/common/modules/textFieldUnit';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const state = () => {
 
-}
+};
 
 const getters = {
 
-}
+};
 
 const mutations = {
 
-}
+};
 
 const actions = {
 
-}
+};
 
 export default new Vuex.Store({
   state,
@@ -29,4 +29,4 @@ export default new Vuex.Store({
   modules: {
     textFieldUnit,
   },
-})
+});
