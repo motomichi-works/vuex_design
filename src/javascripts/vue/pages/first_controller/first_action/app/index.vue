@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TextFieldUnit from '@/javascripts/vue_applications/common/components/TextFieldUnit';
+import TextFieldUnit from '@/javascripts/vue/common/components/TextFieldUnit';
 export default {
   name: 'App',
   components: {

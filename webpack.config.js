@@ -4,7 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   // entry point
   entry: {
-    'javascripts/first_page': './src/javascripts/entry_points/first_page.js',
+    'javascripts/first_page': './src/javascripts/vue/pages/first_controller/first_action/index.js',
   },
   // 出力するパスは絶対パスで書きます
   output: {

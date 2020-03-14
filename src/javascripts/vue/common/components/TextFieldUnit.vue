@@ -11,7 +11,7 @@
 <script>
 import { mapState, mapMutations } from 'vuex';
 
-import TextField from '@/javascripts/vue_applications/common/components/TextField';
+import TextField from '@/javascripts/vue/common/components/TextField';
 export default {
   name: 'TextFieldUnit',
   components: {

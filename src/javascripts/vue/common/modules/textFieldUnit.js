@@ -1,4 +1,4 @@
-import textField from '@/javascripts/vue_applications/common/modules/textField';
+import textField from '@/javascripts/vue/common/modules/textField';
 
 const state = () => {
   return {

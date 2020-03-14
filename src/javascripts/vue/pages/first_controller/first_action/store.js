@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import textFieldUnit from '@/javascripts/vue_applications/common/modules/textFieldUnit';
+import textFieldUnit from '@/javascripts/vue/common/modules/textFieldUnit';
 
 Vue.use(Vuex);
 
