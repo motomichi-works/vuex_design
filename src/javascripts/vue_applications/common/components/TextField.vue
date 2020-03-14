@@ -9,6 +9,13 @@
     <div class="test-synced-text">
       value: {{ value }}
     </div>
+    <div class="mod-error-messages">
+      <ul class="mod-error-messages__list">
+        <li class="mod-error-messages__item">
+          sample message
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
@@ -35,3 +42,14 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+  .mod-error-messages {
+    .mod-error-messages__list {
+      box-sizing: border-box;
+    }
+    .mod-error-messages__item {
+      color: #ff0000;
+    }
+  }
+</style>

@@ -40,6 +40,21 @@ module.exports = {
           },
         ]
       },
+      // 拡張子.scssのファイルに対する設定(.vueの中にscssを書きたい場合もここに設定します。)
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ]
+      },
     ]
   },
   // デフォルトの設定値だけでは足りないことについて解決します
