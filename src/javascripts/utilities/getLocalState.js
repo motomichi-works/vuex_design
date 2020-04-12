@@ -8,4 +8,4 @@ export default function getLocalState (rootState, moduleNames) {
   const localState = stateObjects.pop();
 
   return localState;
-}
+};

@@ -1,13 +1,23 @@
-import textField from '@/javascripts/vue/common/modules/textField';
+// utilities
+import setState from '@/javascripts/utilities/mutations/setState.js';
 
 const state = () => {
   return {
-    count: 0,
+    value: '',
+    checked: false,
+    constraintKey: '',
+    isBlured: false,
+    isCreatedOnce: false,
+    isMountedOnce: false,
+    moduleNames: [],
+    realtimeErrors: [],
   };
 };
 
 const getters = {
-
+  hoge () {
+    return 'hoge';
+  },
 };
 
 const actions = {
@@ -15,9 +25,7 @@ const actions = {
 };
 
 const mutations = {
-  setState (state, payload) {
-    state[payload.key] = payload.value;
-  },
+  setState,
 };
 
 export default {
@@ -29,6 +37,6 @@ export default {
   actions,
   mutations,
   modules: {
-    textField,
+
   },
 };

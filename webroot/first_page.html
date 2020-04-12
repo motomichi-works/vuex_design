@@ -6,7 +6,12 @@
 <title>vue-tutorial</title>
 </head>
 <body>
-<div id="app">
+<div id="vue-root">
+  <app
+    :module-names="[
+      'app',
+    ]"
+  />
 </div>
 
 <script type="text/javascript" src="packed/javascripts/first_page.bundle.js"></script>

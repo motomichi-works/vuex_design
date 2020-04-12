@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import app from '@/javascripts/vue/pages/first_controller/first_action/app/store.js';
+// stores
+import fieldUnit from '@/javascripts/vue/common/field_unit/text_0001/store.js';
 
 Vue.use(Vuex);
 
@@ -21,12 +22,15 @@ const actions = {
 
 };
 
-export default new Vuex.Store({
+export default {
+  // strictとnamespacedをそれぞれtrueにしておきます。
+  strict: true,
+  namespaced: true,
   state,
   getters,
   mutations,
   actions,
   modules: {
-    app,
+    emailFieldUnit: fieldUnit,
   },
-});
+};

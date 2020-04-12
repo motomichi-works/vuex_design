@@ -1,15 +1,27 @@
 <template>
-  <div id="app">
-    <TextFieldUnit />
+  <div class="mod-application">
+    <FirstSection
+      :module-names="[
+        ...moduleNames,
+        'firstSection',
+      ]"
+    />
   </div>
 </template>
 
 <script>
-import TextFieldUnit from '@/javascripts/vue/common/components/TextFieldUnit';
+// components
+import FirstSection from '@/javascripts/vue/pages/first_controller/first_action/app/first_section';
+
 export default {
-  name: 'App',
   components: {
-    TextFieldUnit,
+    FirstSection,
+  },
+  props: {
+    moduleNames: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>

@@ -12,4 +12,4 @@ export default function mappedSetState (payload, modulePath = '') {
     key: payload.key,
     value: payload.value,
   });
-}
+};

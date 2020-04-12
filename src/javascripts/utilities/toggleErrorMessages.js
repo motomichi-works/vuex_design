@@ -25,4 +25,4 @@ export default function toggleErrorMessages (args) {
     key: 'realtimeErrors',
     value: errorMessages,
   }, args.modulePath);
-}
+};

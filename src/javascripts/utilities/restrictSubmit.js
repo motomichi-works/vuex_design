@@ -8,4 +8,4 @@ export default function restrictSubmit (event) {
   if (isWillPrevent) {
     event.preventDefault();
   }
-}
+};
