@@ -1,5 +1,8 @@
 <template>
   <div class="mod-application">
+    <h1>
+      Vuex設計サンプル
+    </h1>
     <FirstSection
       :module-names="[
         ...moduleNames,
