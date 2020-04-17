@@ -9,6 +9,8 @@
           ...moduleNames,
           'emailFieldUnit',
         ]"
+        :constraints="constraints"
+        constraints-key="email"
       />
     </div>
   </div>
@@ -25,6 +27,10 @@ export default {
   props: {
     moduleNames: {
       type: Array,
+      required: true,
+    },
+    constraints: {
+      type: Object,
       required: true,
     },
   },

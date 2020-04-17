@@ -19,6 +19,8 @@
         :maxlength="maxlength"
         :is-disabled="isDisabled"
         :is-will-set-initial-value="isWillSetInitialValue"
+        :constraints="constraints"
+        :constraints-key="constraintsKey"
       />
     </div>
     <div
@@ -30,7 +32,7 @@
     <div class="mod-field-unit-text-0001__error-messages-wrapper">
       <ul>
         <li>
-          error message
+          {{ realtimeErrors }}
         </li>
       </ul>
     </div>
@@ -86,13 +88,24 @@ export default {
       type: String,
       default: '',
     },
+    constraints: {
+      type: Object,
+      required: true,
+    },
+    constraintsKey: {
+      type: String,
+      default: 'noValidation',
+    },
   },
   computed: {
     modulePath () {
       return this.moduleNames.join('/');
     },
     localState () {
-      return this.getLocalStete(this.$store.state, this.modulePath);
+      return this.getLocalStete(this.$store.state, this.moduleNames);
+    },
+    realtimeErrors () {
+      return this.localState.field.realtimeErrors;
     },
   },
   methods: {

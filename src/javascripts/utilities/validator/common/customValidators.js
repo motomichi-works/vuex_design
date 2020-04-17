@@ -2,7 +2,7 @@
 import {
   FIXED_LINE_PHONE_NUMBER_PATTERN,
   MOBILE_PHONE_NUMBER_PATTERN,
-} from '@/javascripts/modules/validator/common/constants';
+} from '@/javascripts/utilities/validator/common/constants';
 
 export default {
   phoneNumberFull (value, options, key, attributes) {
@@ -11,10 +11,10 @@ export default {
 
     const firstChar = value.substr(0, 3);
     const firstCharsOfMobile = [
-    '050',
-    '070',
-    '080',
-    '090',
+      '050',
+      '070',
+      '080',
+      '090',
     ];
 
     if (firstCharsOfMobile.includes(firstChar)) {

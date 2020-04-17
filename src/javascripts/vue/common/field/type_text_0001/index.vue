@@ -14,6 +14,7 @@
 </template>
 <script>
 // utilities
+import validate from 'validate.js';
 import getLocalStete from '@/javascripts/utilities/getLocalState.js';
 import mappedSetState from '@/javascripts/utilities/mappedSetState.js';
 import toggleErrorMessages from '@/javascripts/utilities/toggleErrorMessages.js';
@@ -50,24 +51,63 @@ export default {
         return self.isCreatedOnce;
       },
     },
+    constraints: {
+      type: Object,
+      required: true,
+    },
+    constraintsKey: {
+      type: String,
+      default: 'noValidation',
+    },
     handleInput: {
       type: Function,
       default (self, value) {
         // NOTE: この関数はIME入力が確定されたタイミングで実行されます。
-
         self.mappedSetState({
           key: 'value',
           value,
         }, self.modulePath);
+
+        const eventDummy = {
+          target: {
+            value,
+          },
+        };
+
+        self.toggleErrorMessages({
+          value,
+          validate,
+          constraints: self.constraints,
+          constraintsKey: self.constraintsKey,
+          isBlured: self.isBlured,
+          modulePath: self.modulePath,
+          event: eventDummy,
+        });
       },
     },
     handleBlur: {
       type: Function,
       default (self, event) {
         self.mappedSetState({
+          key: 'isBlured',
+          value: true,
+        }, self.modulePath);
+
+        self.mappedSetState({
           key: 'value',
           value: event.target.value,
         }, self.modulePath);
+
+        const value = event.target.value;
+        self.toggleErrorMessages({
+          value,
+          validate,
+          constraints: self.constraints,
+          constraintsKey: self.constraintsKey,
+          isBlured: self.isBlured,
+          modulePath: self.modulePath,
+          event,
+        });
       },
     },
     handleWatchValue: {
@@ -98,6 +138,9 @@ export default {
     },
     localState () {
       return this.getLocalStete(this.$store.state, this.moduleNames);
+    },
+    isBlured () {
+      return this.localState.isBlured;
     },
     value: {
       get () {

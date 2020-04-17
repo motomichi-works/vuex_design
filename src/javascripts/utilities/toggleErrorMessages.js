@@ -9,7 +9,7 @@ export default function toggleErrorMessages (args) {
 
   const errorMessages = args.validate.single(args.value, constraint);
 
-  if (typeof errorMessages === 'undefined' || args.constraintsKey === 'no_validation') {
+  if (typeof errorMessages === 'undefined' || args.constraintsKey === 'noValidation') {
     // clear realtimeErrors
     this.mappedSetState({
       key: 'realtimeErrors',
@@ -18,7 +18,7 @@ export default function toggleErrorMessages (args) {
     return;
   }
 
-  if (!args.isTainted) return;
+  if (!args.isBlured) return;
 
   // set realtimeErrors
   this.mappedSetState({
