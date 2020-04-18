@@ -30,11 +30,9 @@
       {{ description }}
     </div>
     <div class="mod-field-unit-text-0001__error-messages-wrapper">
-      <ul>
-        <li>
-          {{ realtimeErrors }}
-        </li>
-      </ul>
+      <Alert0001
+        :messages="realtimeErrors"
+      />
     </div>
   </div>
 </template>
@@ -44,10 +42,12 @@ import getLocalStete from '@/javascripts/utilities/getLocalState.js';
 import mappedSetState from '@/javascripts/utilities/mappedSetState.js';
 // components
 import Field from '@/javascripts/vue/common/field/type_text_0001';
+import Alert0001 from '@/javascripts/vue/common/alert_0001';
 
 export default {
   components: {
     Field,
+    Alert0001,
   },
   props: {
     moduleNames: {

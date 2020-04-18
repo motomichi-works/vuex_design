@@ -4,14 +4,17 @@
       FirstSection
     </h2>
     <div class="mod-frame-0001__body">
-      <FieldUnitText0001
-        :module-names="[
-          ...moduleNames,
-          'emailFieldUnit',
-        ]"
-        :constraints="constraints"
-        constraints-key="email"
-      />
+      <div class="mod-frame-0002">
+        <h2>メールアドレス</h2>
+        <FieldUnitText0001
+          :module-names="[
+            ...moduleNames,
+            'emailFieldUnit',
+          ]"
+          :constraints="constraints"
+          constraints-key="email"
+        />
+      </div>
     </div>
   </div>
 </template>
