@@ -5,7 +5,9 @@
     </h2>
     <div class="mod-frame-0001__body">
       <div class="mod-frame-0002">
-        <h2>メールアドレス</h2>
+        <Heading0002
+          main-text="メールアドレス"
+        />
         <FieldUnitText0001
           :module-names="[
             ...moduleNames,
@@ -21,10 +23,12 @@
 
 <script>
 // components
+import Heading0002 from '@/javascripts/vue/common/heading_0002';
 import FieldUnitText0001 from '@/javascripts/vue/common/field_unit/text_0001';
 
 export default {
   components: {
+    Heading0002,
     FieldUnitText0001,
   },
   props: {
