@@ -55,7 +55,7 @@ export default {
     }
   },
   // 電話番号
-  phoneNumberFull: (label, isRequired = true) => {
+  phoneNumber: (label, isRequired = true) => {
     const constraints = {
       phoneNumberFull: {},
     };

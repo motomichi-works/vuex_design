@@ -11,6 +11,7 @@ export default {
   // 初期値が無いラジオボタンなど、サーバーサイドのバリデーションに引っかかった後、
   // ラジオボタン選択によってエラーメッセージを非表示にしたいときにno_validationのキーを使用します。
   noValidation: {},
+  phoneNumber: constraintFunctions.phoneNumber('電話番号'),
   email: constraintFunctions.formatEmail('メールアドレス'),
   selectFieldSample: constraintFunctions.exclusionBlankTypeSelect('テキストフィールドサンプル'),
   textFieldSample: constraintFunctions.exclusionBlankTypeBasic('テキストフィールドサンプル'),
