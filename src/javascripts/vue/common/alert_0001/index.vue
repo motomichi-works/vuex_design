@@ -5,8 +5,11 @@
   >
     <li
       v-for="message in messages"
+      :key="message"
       class="mod-alert-0001__item"
-    >{{ message }}</li>
+    >
+      {{ message }}
+    </li>
   </ul>
 </template>
 
