@@ -1,10 +1,12 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   // entry point
   entry: {
     'javascripts/first_page': './src/javascripts/vue/pages/first_controller/first_action/index.js',
+    'style': './src/stylesheets/style.scss',
   },
   // 出力するパスは絶対パスで書きます
   output: {
@@ -51,8 +53,11 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
+          // {
+          //   loader: 'style-loader',
+          // },
           {
             loader: 'css-loader',
           },
@@ -78,6 +83,11 @@ module.exports = {
   },
   // プラグインを列挙
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    // cssの出力先を指定する
+    new MiniCssExtractPlugin({
+      // filename: `${__dirname}/webroot/packed/[name].css`,
+      filename: 'stylesheets/[name].css',
+    }),
   ],
 }
